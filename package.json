@@ -1,0 +1,20 @@
+{
+  "name": "minesweeper-project",
+  "version": "1.0.0",
+  "description": "A Minesweeper clone written using Web technologies.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "npx vite",
+    "build": "npx vite build"
+  },
+  "keywords": [],
+  "author": "Islabre",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "vite": "^7.2.6"
+  }
+}

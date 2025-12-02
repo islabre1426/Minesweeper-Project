@@ -3,7 +3,7 @@ A Minesweeper clone written using Web technologies.
 
 This project serves as the Final Project for Algorithms and Data Structures course at International University - Vietnam National University, Ho Chi Minh City.
 
-A live version of this project is available on https://islabre1426.github.io/Minesweeper-Clone/
+A live version of this project is available on https://islabre1426.github.io/Minesweeper-Project/
 
 ## Features
 - Retain original Minesweeper features:

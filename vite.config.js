@@ -7,5 +7,6 @@ export default defineConfig({
     base: "/Minesweeper-Clone/",
     build: {
         outDir: nodePath.join(import.meta.dirname, "dist"),
+        emptyOutDir: true,
     },
 });

@@ -25,7 +25,7 @@ A live version of this project is available on https://islabre1426.github.io/Min
     - [ ] Settings
     - [ ] Modern UI
 - [ ] Finish the report and prepare slides in /docs/
-- ~~[x] Add documentation inside /docs/~~
+- [x] Add documentation inside /docs/
 
 ## Run the project locally
 1. Clone this repo:

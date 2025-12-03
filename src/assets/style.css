@@ -42,7 +42,6 @@ body {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(9, 1.5rem);
     gap: 1px;
 
     padding: 2px;

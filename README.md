@@ -47,3 +47,4 @@ npm run serve
 - [Minessweeper](https://www.minessweeper.com/): For UI inspiration.
 - ["Minesweeper (video game)" on Wikipedia](https://en.wikipedia.org/wiki/Minesweeper_(video_game)): For game summary and concept.
 - ChatGPT: For various code base improvement and suggestion.
+- StackOverFlow: For general code and explanation.

@@ -14,12 +14,30 @@ body {
 }
 
 #status {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid;
+    border-radius: 3px;
+
+    margin-bottom: 1rem;
 }
 
-#status > * {
+#status > *:not(#emoji) {
+    width: 100%;
     text-align: center;
+}
+
+#emoji {
+    padding: 0.25rem;
+}
+
+#emoji:hover {
+    background-color: rgb(0, 0, 0, 25%);
+    border-radius: 100%;
+    
+    cursor: pointer;
 }
 
 #board {
@@ -38,7 +56,7 @@ body {
     height: 1.5rem;
 
     background: #bbb;
-    border: 2px solid #eee;
+    border: 1px solid #eee;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;

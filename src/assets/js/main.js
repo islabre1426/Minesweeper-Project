@@ -14,6 +14,7 @@ const stopwatch = document.getElementById("stopwatch");
 let rows, cols, mineCount, boardMat;
 
 let state = {
+    mode: null,
     firstClick: true,
     gameOver: false,
     totalSafeCells: 0,
@@ -27,6 +28,7 @@ function initialize(mode) {
     mineCount = cfg.mines;
 
     minesUI.textContent = `${config.emoji.mine} ${mineCount}`;
+    state.mode = mode;
     state.firstClick = true;
     state.gameOver = false;
 
@@ -100,6 +102,9 @@ board.addEventListener("click", e => {
         }
     });
 });
+
+// Click emoji to restart game
+emoji.addEventListener("click", () => initialize(state.mode));
 
 function updateTimerDisplay(t) {
     const min = String(Math.floor(t / 60)).padStart(2, "0");

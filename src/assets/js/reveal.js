@@ -1,4 +1,6 @@
 import { getButton } from "./board.js";
+import { config } from "./config.js";
+import { onAdjacentCell } from "./util.js";
 
 export function revealCell(r, c, boardMat, rows, cols, board, state, callbacks) {
     const btn = getButton(board, r, c);
@@ -10,7 +12,7 @@ export function revealCell(r, c, boardMat, rows, cols, board, state, callbacks) 
     const cell = boardMat[r][c];
 
     if (cell === "M") {
-        btn.textContent = "💣";
+        btn.textContent = config.emoji.mine;
         btn.classList.add("mine", "mine-hit");
         callbacks.onLose(r, c);
         return;
@@ -28,22 +30,9 @@ export function revealCell(r, c, boardMat, rows, cols, board, state, callbacks) 
         return;
     }
 
+    // Empty cell
     btn.textContent = "";
-    cascade(r, c, boardMat, rows, cols, board, state, callbacks);
-}
 
-function cascade(r, c, boardMat, rows, cols, board, state, callbacks) {
-    const dirs = [
-        [-1,-1],[-1,0],[-1,1],
-        [ 0,-1],[ 0,0],[ 0,1],
-        [ 1,-1],[ 1,0],[ 1,1]
-    ];
-
-    for (const [dr, dc] of dirs) {
-        const nr = r + dr;
-        const nc = c + dc;
-        if (nr >= 0 && nr < rows && nc >= 0 && nc < cols) {
-            revealCell(nr, nc, boardMat, rows, cols, board, state, callbacks);
-        }
-    }
+    // Also reveal empty adjacent cells
+    onAdjacentCell(r, c, rows, cols, (nr, nc) => revealCell(nr, nc, boardMat, rows, cols, board, state, callbacks));
 }

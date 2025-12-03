@@ -17,7 +17,7 @@ let state = {
     firstClick: true,
     gameOver: false,
     totalSafeCells: 0,
-    revealedSafeCells: 0
+    revealedSafeCells: 0,
 };
 
 function initialize(mode) {
@@ -38,10 +38,14 @@ function initialize(mode) {
 }
 
 modeSel.addEventListener("change", () => initialize(modeSel.value));
+
+// Default game mode
 initialize("beginner");
 
+// Right-click to flag cell
 board.addEventListener("contextmenu", e => {
     e.preventDefault();
+
     if (state.gameOver) return;
 
     const btn = e.target;
@@ -58,8 +62,10 @@ board.addEventListener("contextmenu", e => {
     }
 });
 
+// Left-click to reveal cell
 board.addEventListener("click", e => {
     if (state.gameOver) return;
+    
     const btn = e.target;
     if (!btn.matches("button")) return;
 

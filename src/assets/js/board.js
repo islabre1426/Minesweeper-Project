@@ -3,7 +3,10 @@ export function generateBoardMat(rows, cols) {
 }
 
 export function generateBoard(rows, cols, boardElement) {
+    // Reset the board first, useful when changing mode
     boardElement.textContent = "";
+
+    // Resize the board to match mode's expected size
     boardElement.style.gridTemplateColumns = `repeat(${cols}, 1.5rem)`;
 
     for (let r = 0; r < rows; r++) {

@@ -22,3 +22,7 @@ export function resetTimer(callback) {
     time = 0;
     callback(time);
 }
+
+export function getTimerValue() {
+    return time;
+}

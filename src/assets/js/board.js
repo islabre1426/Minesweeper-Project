@@ -22,3 +22,23 @@ export function generateBoard(rows, cols, boardElement) {
 export function getButton(boardElement, r, c) {
     return boardElement.querySelector(`button[data-row="${r}"][data-col="${c}"]`);
 }
+
+export function getCellState(btn) {
+    return {
+        revealed: btn.classList.contains("revealed"),
+        flagged: btn.classList.contains("flagged"),
+        text: btn.textContent,
+        classes: [...btn.classList],
+    };
+}
+
+export function applyCellState(btn, state) {
+    // Reset classes
+    btn.className = "";
+
+    for (const cls of state.classes) {
+        btn.classList.add(cls);
+    }
+
+    btn.textContent = state.text;
+}

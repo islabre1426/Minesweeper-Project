@@ -21,7 +21,7 @@ A live version of this project is available on https://islabre1426.github.io/Min
 
 ## TODO
 - [ ] Implement features:
-    - [ ] Undo previous move
+    - [x] Undo previous move
     - [ ] Settings
     - [ ] Modern UI
 - [ ] Finish the report and prepare slides in /docs/

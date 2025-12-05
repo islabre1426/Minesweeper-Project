@@ -34,7 +34,7 @@ export function showLose(board, boardMat, action) {
     }
 }
 
-export function showWin(board, boardMat, action) {
+export function showWin(board, boardMat, action, minesUI, mineCount) {
     const btns = board.querySelectorAll("button");
 
     for (const btn of btns) {
@@ -47,9 +47,11 @@ export function showWin(board, boardMat, action) {
         btn.disabled = true;
         btn.style.cursor = "initial";
 
-        if (isMine(boardMat, r, c)) {
+        // Flag remaining mines
+        if (isMine(boardMat, r, c) && !btn.classList.contains("flagged")) {
+            btn.classList.add("flagged");
             btn.textContent = config.emoji.flag;
-            btn.classList.add("revealed", "flagged");
+            minesUI.textContent = `${config.emoji.mine} ${--mineCount}`;
         }
 
         const next = getCellState(btn);

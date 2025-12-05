@@ -74,7 +74,9 @@ board.addEventListener("contextmenu", e => {
         btn.classList.remove("flagged");
         btn.textContent = "";
         minesUI.textContent = `${config.emoji.mine} ${++mineCount}`;
-    } else {
+    
+    // Cannot flag more than the amount of mines on the board
+    } else if (mineCount > 0)  {
         btn.classList.add("flagged");
         btn.textContent = config.emoji.flag;
         minesUI.textContent = `${config.emoji.mine} ${--mineCount}`;
@@ -144,8 +146,8 @@ board.addEventListener("click", e => {
             state.gameOver = true;
             stopTimer();
             emoji.textContent = config.emoji.win;
-            showWin(board, boardMat, action);
-        }
+            showWin(board, boardMat, action, minesUI, mineCount);
+        },
     });
 
     action.stateAfter = {

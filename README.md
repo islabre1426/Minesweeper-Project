@@ -10,6 +10,7 @@ A live version of this project is available on https://islabre1426.github.io/Min
     - Three difficulties: Beginner, Intermediate, Expert
     - Flagging tiles suspected as mine
     - Counting time since first opened tiles
+- Undo previous moves
 
 ## Technologies
 - Frontend: HTML + CSS + JS
@@ -21,9 +22,9 @@ A live version of this project is available on https://islabre1426.github.io/Min
 
 ## TODO
 - [ ] Implement features:
-    - [x] Undo previous move
     - [ ] Settings
     - [ ] Modern UI
+    - [x] Undo previous move
 - [ ] Finish the report and prepare slides in /docs/
 - [x] Add documentation inside /docs/
 
